@@ -1,0 +1,263 @@
+/* --- Global Styles & Reset --- */
+:root {
+    --color-teal: #00ADB5;     /* Vibrant Teal */
+    --color-indigo: #393E46;   /* Deep Indigo/Gray */
+    --color-accent: #EEEEEE;   /* Light Gray/Accent */
+    --color-dark: #222831;     /* Very Dark Background */
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-accent);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    color: var(--color-indigo);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    color: var(--color-teal);
+    font-weight: 900;
+    font-size: 1.6em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    padding: 10px 15px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--color-teal);
+    border-bottom: 2px solid var(--color-teal);
+}
+
+/* --- 1. Banner Section (Gradient with Angled Flow) --- */
+.banner-section {
+    background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-indigo) 100%);
+    color: var(--color-white);
+    text-align: center;
+    padding: 150px 20px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); 
+    margin-bottom: -100px; 
+}
+
+.banner-content h1 {
+    font-size: 3.8em;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.banner-content p {
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-indigo);
+    padding: 18px 40px;
+    border-radius: 5px; 
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    transform: scale(1.05);
+}
+
+/* --- 2. Mission Section (White Background) --- */
+.mission-section {
+    background-color: var(--color-white);
+    padding: 120px 0 80px 0; 
+    position: relative;
+    z-index: 500;
+}
+
+.mission-section h2 {
+    color: var(--color-teal);
+    text-transform: uppercase;
+}
+
+.mission-points {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.point {
+    flex: 1;
+    font-size: 1.1em;
+    padding: 20px;
+    border-left: 3px solid var(--color-indigo);
+}
+
+/* --- 3. Members Showcase Section (Grid Flow) --- */
+.members-section {
+    background-color: var(--color-accent);
+    padding: 80px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--color-indigo);
+    margin-bottom: 50px;
+}
+
+.member-list {
+    /* CSS Grid setup for 2 or 3 columns */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px; /* Spacing between cards */
+}
+
+.member-block {
+    display: flex;
+    flex-direction: column; /* Stacks image and info vertically */
+    align-items: center;
+    padding: 25px; 
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.member-block:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.member-block img {
+    width: 150px; /* Larger image size for grid */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--color-teal);
+    margin-right: 0;
+    margin-bottom: 15px;
+}
+
+.member-info {
+    text-align: center;
+    width: 100%;
+}
+
+.member-info h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--color-indigo);
+    margin-bottom: 5px;
+}
+
+.member-info p {
+    text-align: center;
+    color: var(--color-teal);
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* --- CV Link Style --- */
+.member-info .cv-link {
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    border: 1px solid var(--color-teal);
+    padding: 5px 12px;
+    border-radius: 50px; /* Pill shape */
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.member-info .cv-link:hover {
+    background-color: var(--color-indigo);
+    color: var(--color-accent);
+    transform: scale(1.05);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    /* Switch to a 2-column layout on tablets */
+    .member-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .banner-content h1 {
+        font-size: 2.5em;
+    }
+    nav {
+        flex-direction: column;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    /* Switch to a 1-column layout on phones */
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+}
